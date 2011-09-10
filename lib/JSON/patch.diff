@@ -1,0 +1,33 @@
+235c235
+< 			checkProp($value, $type, $path, undef, $_changing);
+---
+> 			$self->checkProp($value, $type, $path, undef, $_changing);
+283c283
+< 		checkProp($value, $schema->{'extends'}, $path, $i, $_changing);
+---
+> 		$self->checkProp($value, $schema->{'extends'}, $path, $i, $_changing);
+304,306c304,307
+< 				if (ref $schema->{'items'} eq 'ARRAY')
+< 				{
+< 					for (my $i=0; $i < scalar @{ $schema->{'items'} }; $i++)
+---
+> 				my $items = $schema->{items};
+> 				if (ref $items eq 'ARRAY')
+> 				{ # check each item in $schema->{items} vs corresponding array value
+> 					for (my $i=0; $i < @$items; $i++)
+309c310
+< 						push @{$self->{errors}}, checkProp($x, $schema->{'items'}->[$i], $path, $i, $_changing);
+---
+> 						push @{$self->{errors}}, $self->checkProp($x, $items->[$i], $path, $i, $_changing);
+312,314c313,315
+< 				elsif (defined $schema->{'items'})
+< 				{
+< 					for (my $i=0; $i < scalar @{ $schema->{'items'} }; $i++)
+---
+> 				elsif (ref $items eq 'HASH')
+> 				{ # check single $schema->{items} hash vs all values in array
+> 					for (my $i=0; $i < @$value; $i++)
+317c318
+< 						push @{$self->{errors}}, checkProp($x, $schema->{'items'}, $path, $i, $_changing);
+---
+> 						push @{$self->{errors}}, $self->checkProp($x, $items, $path, $i, $_changing);

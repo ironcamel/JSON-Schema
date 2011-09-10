@@ -1,0 +1,75 @@
+#############################################################
+
+@prefix :        <http://usefulinc.com/ns/doap#> .
+@prefix dcs:     <http://ontologi.es/doap-changeset#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix my:      <http://purl.org/NET/cpan-uri/dist/JSON-Schema/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix toby:    <http://tobyinkster.co.uk/#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#############################################################
+
+<>
+
+	dc:title         "Changes" ;
+	dc:description   "Revision history for Perl extension JSON::Schema."@en ;
+	dc:subject       my:project ;
+	dc:creator       toby:i .
+
+#############################################################
+
+my:v_0-001_00
+
+	a               :Version ;
+	dc:issued       "2010-08-02"^^xsd:date ;
+	:revision       "0.001_00"^^xsd:string ;
+	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/JSON-Schema-0.001_00.tar.gz> ;
+	rdfs:comment    "Developer release"@en .
+
+my:v_0-001_01
+
+	a               :Version ;
+	dc:issued       "2010-08-04"^^xsd:date ;
+	:revision       "0.001_01"^^xsd:string ;
+	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/JSON-Schema-0.001_01.tar.gz> ;
+	dcs:changeset [
+		dcs:versus my:v_0-001_00 ;
+		dcs:item   [ rdfs:label "Support for maximumCanEqual and minimumCanEqual, which aren't included in the Javascript version."@en ; a dcs:Addition ] ;
+		dcs:item   [ rdfs:label "Support for divisibleBy."@en ; a dcs:Addition  ] ;
+		dcs:item   [ rdfs:label "JSON::Schema now calls JSON::Hyper to expand $ref references by itself. This is more efficient as they can be expanded just-in-time, as needed, rather than speculatively."@en ; rdfs:comment "This is a more efficient way of doing things."@en ; a dcs:Addition ]
+		] .
+
+#############################################################
+
+my:project
+
+	a               :Project ;
+	:name           "JSON-Schema" ;
+	:shortdesc      "validate JSON against a schema"@en ;
+	:programming-language  "Perl" ;
+	:homepage       <http://search.cpan.org/dist/JSON-Schema/> ;
+	:download-page  <http://search.cpan.org/dist/JSON-Schema/> ;
+	:bug-database   <http://rt.cpan.org/Dist/Display.html?Queue=JSON-Schema> ;
+	:repository     [ a :SVNRepository ; :browse <http://goddamn.co.uk/viewvc/perlmods/JSON-Schema/> ] ;
+	:maintainer     toby:i ;
+	:developer      toby:i ;
+	:documenter     toby:i ;
+	:tester         toby:i ;
+	:created        "2010-07-31"^^xsd:date ;
+	:license        <http://dev.perl.org/licenses/> , <http://opensource.org/licenses/mit-license.php> ;
+	:release        my:v_0-001_00 , my:v_0-001_01 .
+
+#############################################################
+
+toby:i
+
+	a               foaf:Person ;
+	foaf:name       "Toby Inkster" ;
+	foaf:homepage   <http://tobyinkster.co.uk/> ;
+	foaf:page       <http://search.cpan.org/~tobyink/> ;
+	foaf:mbox       <mailto:tobyink@cpan.org> ;
+	<http://www.w3.org/2002/07/owl#sameAs> <http://purl.org/NET/cpan-uri/person/tobyink> .
+
+#############################################################

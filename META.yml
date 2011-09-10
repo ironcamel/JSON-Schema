@@ -1,0 +1,40 @@
+---
+abstract: 'validate JSON against a schema'
+author:
+  - 'Toby Inkster <tobyink@cpan.org>'
+build_requires:
+  ExtUtils::MakeMaker: 6.42
+  Test::More: 0.61
+configure_requires:
+  ExtUtils::MakeMaker: 6.42
+distribution_type: module
+generated_by: 'Module::Install version 0.95'
+keywords:
+  - JSON
+  - schema
+  - validate
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: JSON-Schema
+no_index:
+  directory:
+    - inc
+    - t
+requires:
+  Carp: 1.00
+  HTTP::Link::Parser: 0.100
+  JSON: 2.00
+  JSON::Hyper: 0
+  JSON::Path: 0
+  LWP::UserAgent: 0
+  Scalar::Util: 0
+  common::sense: 0
+  perl: 5.8.0
+resources:
+  bugtracker: http://rt.cpan.org/Dist/Display.html?Queue=JSON-Schema
+  homepage: http://search.cpan.org/dist/JSON-Schema/
+  license: http://dev.perl.org/licenses/
+  repository: http://goddamn.co.uk/viewvc/perlmods/JSON-Schema/
+version: 0.001_01

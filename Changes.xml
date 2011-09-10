@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:dbug="http://ontologi.es/doap-bugs#" xmlns:dc="http://purl.org/dc/terms/" xmlns:dcs="http://ontologi.es/doap-changeset#" xmlns:doap="http://usefulinc.com/ns/doap#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+<rdf:Description rdf:nodeID="r2298820A9FF111DFA56CB8B8FF465190r0">
+	<dcs:item rdf:nodeID="r2298820A9FF111DFA56CB8B8FF465190r1"/>
+	<dcs:item rdf:nodeID="r2298820A9FF111DFA56CB8B8FF465190r2"/>
+	<dcs:item rdf:nodeID="r2298820A9FF111DFA56CB8B8FF465190r3"/>
+	<dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/JSON-Schema/v_0-001_00"/>
+</rdf:Description>
+<rdf:Description rdf:nodeID="r2298820A9FF111DFA56CB8B8FF465190r1">
+	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Addition"/>
+	<rdfs:label xml:lang="en">Support for maximumCanEqual and minimumCanEqual, which aren't included in the Javascript version.</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:nodeID="r2298820A9FF111DFA56CB8B8FF465190r2">
+	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Addition"/>
+	<rdfs:label xml:lang="en">Support for divisibleBy.</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:nodeID="r2298820A9FF111DFA56CB8B8FF465190r3">
+	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Addition"/>
+	<rdfs:comment xml:lang="en">This is a more efficient way of doing things.</rdfs:comment>
+	<rdfs:label xml:lang="en">JSON::Schema now calls JSON::Hyper to expand $ref references by itself. This is more efficient as they can be expanded just-in-time, as needed, rather than speculatively.</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:nodeID="r2298820A9FF111DFA56CB8B8FF465190r4">
+	<doap:browse rdf:resource="http://goddamn.co.uk/viewvc/perlmods/JSON-Schema/"/>
+	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#SVNRepository"/>
+</rdf:Description>
+<rdf:Description rdf:about="file:///home/tai/src/perlmods/JSON-Schema/Changes.ttl">
+	<dc:creator rdf:resource="http://tobyinkster.co.uk/#i"/>
+	<dc:description xml:lang="en">Revision history for Perl extension JSON::Schema.</dc:description>
+	<dc:subject rdf:resource="http://purl.org/NET/cpan-uri/dist/JSON-Schema/project"/>
+	<dc:title>Changes</dc:title>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/JSON-Schema/project">
+	<doap:bug-database rdf:resource="http://rt.cpan.org/Dist/Display.html?Queue=JSON-Schema"/>
+	<doap:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-07-31</doap:created>
+	<doap:developer rdf:resource="http://tobyinkster.co.uk/#i"/>
+	<doap:documenter rdf:resource="http://tobyinkster.co.uk/#i"/>
+	<doap:download-page rdf:resource="http://search.cpan.org/dist/JSON-Schema/"/>
+	<doap:homepage rdf:resource="http://search.cpan.org/dist/JSON-Schema/"/>
+	<doap:license rdf:resource="http://dev.perl.org/licenses/"/>
+	<doap:license rdf:resource="http://opensource.org/licenses/mit-license.php"/>
+	<doap:maintainer rdf:resource="http://tobyinkster.co.uk/#i"/>
+	<doap:name>JSON-Schema</doap:name>
+	<doap:programming-language>Perl</doap:programming-language>
+	<doap:release rdf:resource="http://purl.org/NET/cpan-uri/dist/JSON-Schema/v_0-001_00"/>
+	<doap:release rdf:resource="http://purl.org/NET/cpan-uri/dist/JSON-Schema/v_0-001_01"/>
+	<doap:repository rdf:nodeID="r2298820A9FF111DFA56CB8B8FF465190r4"/>
+	<doap:shortdesc xml:lang="en">validate JSON against a schema</doap:shortdesc>
+	<doap:tester rdf:resource="http://tobyinkster.co.uk/#i"/>
+	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Project"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/JSON-Schema/v_0-001_00">
+	<dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-08-02</dc:issued>
+	<doap:file-release rdf:resource="http://backpan.cpan.org/authors/id/T/TO/TOBYINK/JSON-Schema-0.001_00.tar.gz"/>
+	<doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.001_00</doap:revision>
+	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Version"/>
+	<rdfs:comment xml:lang="en">Developer release</rdfs:comment>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/JSON-Schema/v_0-001_01">
+	<dcs:changeset rdf:nodeID="r2298820A9FF111DFA56CB8B8FF465190r0"/>
+	<dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-08-04</dc:issued>
+	<doap:file-release rdf:resource="http://backpan.cpan.org/authors/id/T/TO/TOBYINK/JSON-Schema-0.001_01.tar.gz"/>
+	<doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.001_01</doap:revision>
+	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Version"/>
+</rdf:Description>
+<rdf:Description xmlns:ns1="http://www.w3.org/2002/07/owl#" rdf:about="http://tobyinkster.co.uk/#i">
+	<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+	<ns1:sameAs rdf:resource="http://purl.org/NET/cpan-uri/person/tobyink"/>
+	<foaf:homepage rdf:resource="http://tobyinkster.co.uk/"/>
+	<foaf:mbox rdf:resource="mailto:tobyink@cpan.org"/>
+	<foaf:name>Toby Inkster</foaf:name>
+	<foaf:page rdf:resource="http://search.cpan.org/~tobyink/"/>
+</rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,22 @@
+############################################################################
+## Changes #################################################################
+############################################################################
+
+JSON-Schema
+===========
+
+Created:      2010-07-31
+Home page:    <http://search.cpan.org/dist/JSON-Schema/>
+Bug tracker:  <http://rt.cpan.org/Dist/Display.html?Queue=JSON-Schema>
+Maintainer:   Toby Inkster <mailto:tobyink@cpan.org>
+
+0.001_01 [2010-08-04]
+ - (Addition) JSON::Schema now calls JSON::Hyper to expand $ref references
+   by itself. This is more efficient as they can be expanded just-in-time,
+   as needed, rather than speculatively.
+ - (Addition) Support for divisibleBy.
+ - (Addition) Support for maximumCanEqual and minimumCanEqual, which aren't
+   included in the Javascript version.
+
+0.001_00 [2010-08-02]
+
