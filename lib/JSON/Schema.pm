@@ -232,7 +232,7 @@ sub checkType
 		elsif (ref $type eq 'HASH')
 		{
 			local $self->{errors} = [];
-			checkProp($value, $type, $path, undef, $_changing);
+			$self->checkProp($value, $type, $path, undef, $_changing);
 			return @{ $self->{errors} };
 		}
 	}
@@ -280,7 +280,7 @@ sub checkProp
 	}
 	if ($schema->{'extends'})
 	{
-		checkProp($value, $schema->{'extends'}, $path, $i, $_changing);
+		$self->checkProp($value, $schema->{'extends'}, $path, $i, $_changing);
 	}
 	
 	# validate a value against a type definition
@@ -301,20 +301,21 @@ sub checkProp
 		{
 			if (ref $value eq 'ARRAY')
 			{
-				if (ref $schema->{'items'} eq 'ARRAY')
-				{
-					for (my $i=0; $i < scalar @{ $schema->{'items'} }; $i++)
+				my $items = $schema->{items};
+				if (ref $items eq 'ARRAY')
+				{ # check each item in $schema->{items} vs corresponding array value
+					for (my $i=0; $i < @$items; $i++)
 					{
 						my $x = defined $value->[$i] ? $value->[$i] : JSON::Schema::Null->new; 
-						push @{$self->{errors}}, checkProp($x, $schema->{'items'}->[$i], $path, $i, $_changing);
+						push @{$self->{errors}}, $self->checkProp($x, $items->[$i], $path, $i, $_changing);
 					}
 				}
-				elsif (defined $schema->{'items'})
-				{
-					for (my $i=0; $i < scalar @{ $schema->{'items'} }; $i++)
+				elsif (ref $items eq 'HASH')
+				{ # check single $schema->{items} hash vs all values in array
+					for (my $i=0; $i < @$value; $i++)
 					{
 						my $x = defined $value->[$i] ? $value->[$i] : JSON::Schema::Null->new; 
-						push @{$self->{errors}}, checkProp($x, $schema->{'items'}, $path, $i, $_changing);
+						push @{$self->{errors}}, $self->checkProp($x, $items, $path, $i, $_changing);
 					}
 				}
 				if ($schema->{'minItems'}
