@@ -398,7 +398,7 @@ sub checkProp
 				else
 				{
 					$addError->("must be less than or equal to maximum value " . $schema->{'maximum'})
-						unless $value <= $schema->{'minimum'};
+						unless $value <= $schema->{'maximum'};
 				}
 			}
 			if ($schema->{'enum'})
